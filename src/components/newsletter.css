@@ -22,4 +22,5 @@ body{
 .wrapper{
     display: flex;
     background: hsl(0, 0%, 100%);
+    border-radius: 25px;
 }

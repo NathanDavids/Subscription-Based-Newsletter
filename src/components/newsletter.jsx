@@ -1,11 +1,13 @@
 import React from 'react'
 import '../components/newsletter.css'
+import iconList from '../assets/icon-list.svg'
+import desktopSignUp from '../assets/desktop-sign-up.svg'
 
 function Newsletter() {
 
   return (
     <>
-      <div className='container'>
+      <div className='container '>
         <div className='wrapper'>
             <div className='left'>
                 <div className='leftContent'>
@@ -16,15 +18,15 @@ function Newsletter() {
                         <p>Join 60 000+ product managers receiving monthly updates on: </p>
                     </div>
                     <div>
-                        <p>Image</p>
+                        <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
                     <div>
-                        <p>Image</p>
+                        <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
                     <div>
-                        <p>Image</p>
+                        <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
                     <div>
@@ -35,7 +37,7 @@ function Newsletter() {
                 </div>
             </div>
             <div className='right'>
-                <h2>Image</h2>
+                <img src={desktopSignUp} />
             </div>
         </div>
       </div>
