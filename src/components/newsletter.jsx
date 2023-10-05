@@ -17,23 +17,23 @@ function Newsletter() {
                     <div>
                         <p>Join 60 000+ product managers receiving monthly updates on: </p>
                     </div>
-                    <div>
+                    <div className='list'>
                         <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
-                    <div>
+                    <div className='list'>
                         <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
-                    <div>
+                    <div className='list'>
                         <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
                     <div>
                         <label htmlFor="email">Email Address</label>
-                        <input type="email" name='email' />
                     </div>
-                    <button type='button'>Subscribe to monthly newslatter</button>
+                    <input type="email" name='email' placeholder='email@company.com' />
+                    <button type='button' className='bg-black text-white'>Subscribe to monthly newslatter</button>
                 </div>
             </div>
             <div className='right'>

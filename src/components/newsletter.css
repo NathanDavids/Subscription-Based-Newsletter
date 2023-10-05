@@ -24,3 +24,75 @@ body{
     background: hsl(0, 0%, 100%);
     border-radius: 25px;
 }
+
+.leftContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.leftContent h1{
+    font-size: 52px;
+    font-weight: 700;
+    color: hsl(234, 29%, 20%);
+}
+
+.leftContent p{
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: hsl(234, 29%, 20%);
+}
+
+.list{
+    display: flex;
+    gap: 10px;
+}
+
+label{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+input{
+    padding: 15px 25px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid hsl(231, 7%, 60%);
+}
+
+input::placeholder{
+    color: hsl(231, 7%, 60%);
+}
+
+button{
+    height: 50px;
+    width: 100%;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 4px;
+    background: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background: #fbda61;
+    background-image: linear-gradient(#fbda61 0%, #ff5acd 100%);
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right img{
+    height: 92%;
+    margin-right: 10px;
+}
