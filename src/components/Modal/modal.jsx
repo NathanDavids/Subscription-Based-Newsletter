@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Newsletter from './components/Newsletter/newsletter'
 
-function App() {
+function Modal() {
 
   return (
     <>
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default Modal

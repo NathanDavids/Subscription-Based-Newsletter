@@ -1,7 +1,7 @@
 import React from 'react'
-import '../components/newsletter.css'
-import iconList from '../assets/icon-list.svg'
-import desktopSignUp from '../assets/desktop-sign-up.svg'
+import '../Newsletter/newsletter.css'
+import iconList from '../../assets/icon-list.svg'
+import desktopSignUp from '../../assets/desktop-sign-up.svg'
 
 function Newsletter() {
 

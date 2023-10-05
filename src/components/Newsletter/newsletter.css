@@ -51,6 +51,7 @@ body{
 .list{
     display: flex;
     gap: 10px;
+    margin-bottom: -10px;
 }
 
 label{
@@ -96,3 +97,4 @@ button:hover{
     height: 92%;
     margin-right: 10px;
 }
+
