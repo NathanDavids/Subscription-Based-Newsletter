@@ -61,10 +61,13 @@ function Newsletter() {
                         <img src={iconList} />
                         <p>Product discovery and building what matters</p>
                     </div>
-                    <div>
+                    <div className='emailLabel'>
                         <label htmlFor="email">Email Address</label>
+                        {!validEmail && email !== "" && (
+                        <p className='warning'>Valid email required </p>
+                        )}
                     </div>
-                    <input type="email" name='email' placeholder='email@company.com' value={email} onChange={handleEmailChange}/>
+                    <input type="email" name='email' placeholder='email@company.com' value={email} onChange={handleEmailChange}  className={ email !== "" && !validEmail ? 'inputerror' : ""}/>
                     <button type='button' onClick={handleSubmit} className='bg-black text-white'>Subscribe to monthly newslatter</button>
                 </div>
             </div>
