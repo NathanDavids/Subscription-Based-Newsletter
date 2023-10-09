@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Newsletter/newsletter.css'
 import iconList from '../../assets/icon-list.svg'
 import desktopSignUp from '../../assets/desktop-sign-up.svg'
+import Modal from '../Modal/modal'
 
 function Newsletter() {
 
-  return (
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const [email, setEmail] = useState("");
+    const [validEmail, setValidEmail] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleEmailChange = (e) => {
+        const inputEmail = e.target.value;
+        setEmail(inputEmail);
+        setValidEmail(emailRegex.test(inputEmail) || inputEmail === "")
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (validEmail){
+            console.log('Form Submitted Successfully!')
+            setIsModalOpen(true);
+        }
+        else{
+            console.log('Error')
+        }
+    }
+
+
+
+  return isModalOpen ? (
+    <Modal />
+    ) : (
     <>
       <div className='container '>
         <div className='wrapper'>
@@ -32,8 +59,8 @@ function Newsletter() {
                     <div>
                         <label htmlFor="email">Email Address</label>
                     </div>
-                    <input type="email" name='email' placeholder='email@company.com' />
-                    <button type='button' className='bg-black text-white'>Subscribe to monthly newslatter</button>
+                    <input type="email" name='email' placeholder='email@company.com' value={email} onChange={handleEmailChange}/>
+                    <button type='button' onClick={handleSubmit} className='bg-black text-white'>Subscribe to monthly newslatter</button>
                 </div>
             </div>
             <div className='right'>
