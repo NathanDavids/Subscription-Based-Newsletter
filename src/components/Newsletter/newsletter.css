@@ -87,6 +87,11 @@ button:hover{
     background-image: linear-gradient(#fbda61 0%, #ff5acd 100%);
 }
 
+button:disabled{
+    cursor: not-allowed;
+    background-color: hsl(234, 29%, 20%);
+}
+
 .right{
     display: flex;
     align-items: center;
@@ -119,4 +124,32 @@ button:hover{
     border: 1px solid hsl(4, 100%, 67%);
     background-color: rgba(255, 99, 71, 0.1);
     color: hsl(4, 100%, 67%);
+}
+
+@media only screen and (max-width: 375px){
+    .wrapper{
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+
+    .left h1{
+        font-size: 50px;
+    }
+
+    .left div,
+    .left input {
+        margin-bottom: 20px;
+    }
+
+    .right{
+        overflow: hidden;
+        height: 230px;
+    }
+
+    .right img{
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+    }
 }

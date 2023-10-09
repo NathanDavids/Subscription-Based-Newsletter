@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Newsletter/newsletter.css'
 import iconList from '../../assets/icon-list.svg'
 import desktopSignUp from '../../assets/desktop-sign-up.svg'
+import mobileSignUp from '../../assets/mobile-sign-up.svg'
 import Modal from '../Modal/modal'
 
 function Newsletter() {
@@ -10,6 +11,7 @@ function Newsletter() {
     const [email, setEmail] = useState("");
     const [validEmail, setValidEmail] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [view, setView] = useState(window.innerWidth);
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -33,7 +35,17 @@ function Newsletter() {
         setEmail("")
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            setView(window.innerWidth)
+        }
 
+        window.addEventListener("resize", handleResize);
+    
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+    })
 
   return isModalOpen ? (
     <Modal name={email || "Subscriber"} onCloseModal={handleCloseModal} />
@@ -68,11 +80,11 @@ function Newsletter() {
                         )}
                     </div>
                     <input type="email" name='email' placeholder='email@company.com' value={email} onChange={handleEmailChange}  className={ email !== "" && !validEmail ? 'inputerror' : ""}/>
-                    <button type='button' onClick={handleSubmit} className='bg-black text-white'>Subscribe to monthly newslatter</button>
+                    <button type='button' onClick={handleSubmit} disabled={!validEmail || email === ""} className='bg-black text-white'>Subscribe to monthly newslatter</button>
                 </div>
             </div>
             <div className='right'>
-                <img src={desktopSignUp} />
+                <img src={view >= 375 ? desktopSignUp : mobileSignUp} />
             </div>
         </div>
       </div>
