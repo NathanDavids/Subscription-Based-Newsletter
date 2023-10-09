@@ -2,7 +2,10 @@ import React from 'react'
 import '../Modal/modal.css'
 import Success from '../../assets/icon-success.svg'
 
-function Modal() {
+  const Modal = ({ onCloseModal, name }) => {
+  const handleButtonClick = () => {
+    onCloseModal();
+  };
 
   return (
     <>
@@ -17,11 +20,11 @@ function Modal() {
             </div>
             <div>
               <p>
-                A confirmation email has been sent to <b>email@company.com</b>. Please open it and click the button inside to confirm your subscription.
+                A confirmation email has been sent to <b>{name}</b>. Please open it and click the button inside to confirm your subscription.
               </p>
             </div>
             <div>
-              <button type='button' className='bg-black text-white'> Dismiss Message</button>
+              <button type='button' onClick={handleButtonClick} className='bg-black text-white'> Dismiss Message</button>
             </div>
           </div>
         </div>

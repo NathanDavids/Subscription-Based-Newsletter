@@ -28,10 +28,15 @@ function Newsletter() {
         }
     }
 
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setEmail("")
+    }
+
 
 
   return isModalOpen ? (
-    <Modal />
+    <Modal name={email || "Subscriber"} onCloseModal={handleCloseModal} />
     ) : (
     <>
       <div className='container '>
